@@ -1,9 +1,9 @@
 <div class="row align-items-center">
   <div class="col-12">
-    <img src="https://picsum.photos/id/11/800/600" class="img-fluid" />
+    <img [src]="recipe.imagePath" class="img-fluid" [alt]="recipe.name" />
   </div>
   <div class="col-6">
-    <h2>Name</h2>
+    <h2>{{ recipe.name }}</h2>
   </div>
   <div class="col-6">
     <div class="btn-group">
@@ -20,6 +20,5 @@
       </ul>
     </div>
   </div>
-  <div class="col-12">Description</div>
-  <div class="col-12">Ingredients</div>
+  <div class="col-12">{{ recipe.description }}</div>
 </div>
