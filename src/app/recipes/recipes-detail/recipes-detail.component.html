@@ -1,1 +1,25 @@
-<p>recipes-detail works!</p>
+<div class="row align-items-center">
+  <div class="col-12">
+    <img src="https://picsum.photos/id/11/800/600" class="img-fluid" />
+  </div>
+  <div class="col-6">
+    <h2>Name</h2>
+  </div>
+  <div class="col-6">
+    <div class="btn-group">
+      <button
+        class="btn btn-primary btn-sm dropdown-toggle"
+        (click)="colapsed = !colapsed"
+      >
+        Manage<span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" [class.show]="colapsed">
+        <li><a class="dropdown-item">To Shopping List</a></li>
+        <li><a class="dropdown-item">Edit</a></li>
+        <li><a class="dropdown-item">Delete</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-12">Description</div>
+  <div class="col-12">Ingredients</div>
+</div>

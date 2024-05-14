@@ -3,13 +3,11 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-recipes-detail',
   templateUrl: './recipes-detail.component.html',
-  styleUrls: ['./recipes-detail.component.scss']
+  styleUrls: ['./recipes-detail.component.scss'],
 })
 export class RecipesDetailComponent implements OnInit {
+  colapsed = false;
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
