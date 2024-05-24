@@ -6,19 +6,33 @@
     <h2>{{ recipe.name }}</h2>
   </div>
   <div class="col-6">
-    <div class="btn-group">
-      <button
-        class="btn btn-primary btn-sm dropdown-toggle"
-        (click)="colapsed = !colapsed"
-      >
+    <div class="btn-group" appDropdown>
+      <button class="btn btn-primary btn-sm dropdown-toggle">
         Manage<span class="caret"></span>
       </button>
-      <ul class="dropdown-menu" [class.show]="colapsed">
-        <li><a class="dropdown-item">To Shopping List</a></li>
-        <li><a class="dropdown-item">Edit</a></li>
-        <li><a class="dropdown-item">Delete</a></li>
+      <ul class="dropdown-menu">
+        <li>
+          <a class="dropdown-item pointer" (click)="onToShoppingList()"
+            >To Shopping List</a
+          >
+        </li>
+        <li><a class="dropdown-item pointer">Edit</a></li>
+        <li><a class="dropdown-item pointer">Delete</a></li>
       </ul>
     </div>
   </div>
-  <div class="col-12">{{ recipe.description }}</div>
+  <div class="col-12 mb-2">
+    <h5>Description</h5>
+    <p>
+      {{ recipe.description }}
+    </p>
+  </div>
+  <div class="col-12">
+    <h5>Ingredients</h5>
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let ingredient of recipe.ingredients">
+        {{ ingredient.name }} - ({{ ingredient.amount }})
+      </li>
+    </ul>
+  </div>
 </div>
