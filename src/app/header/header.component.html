@@ -21,20 +21,22 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <span
-            class="nav-link active pointer"
+            class="nav-link pointer"
             aria-current="page"
-            href="#"
-            (click)="onSelect('recipe')"
+            routerLink="/recipes"
+            routerLinkActive="active"
             >Recipes</span
           >
+          <!-- (click)="onSelect('recipe') -->
         </li>
         <li class="nav-item">
           <span
             class="nav-link pointer"
-            href="#"
-            (click)="onSelect('shopping-list')"
+            routerLink="/shopping-list"
+            routerLinkActive="active"
             >Shopping List</span
           >
+          <!-- (click)="onSelect('shopping-list')" -->
         </li>
       </ul>
       <ul class="navbar-nav navbar-right">

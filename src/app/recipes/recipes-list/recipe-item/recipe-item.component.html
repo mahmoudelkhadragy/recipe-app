@@ -1,6 +1,8 @@
+<!-- (click)="onSelected()" -->
 <span
   class="list-group-item d-flex justify-content-between align-items-center bg-light-gry mb-2 border p-2 pointer"
-  (click)="onSelected()"
+  [routerLink]="[index]"
+  routerLinkActive="active"
 >
   <div class="pull-left">
     <h4 class="list-group-item-heading fs-6">{{ recipe.name }}</h4>
