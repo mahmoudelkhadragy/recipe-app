@@ -12,3 +12,8 @@
 .nav-link.active {
   background-color: #ddd;
 }
+
+input.ng-invalid.ng-touched,
+textarea.ng-invalid.ng-touched {
+  border: 1px solid red;
+}

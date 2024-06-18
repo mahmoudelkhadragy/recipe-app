@@ -5,7 +5,7 @@ import { Ingredient } from '../shared/ingredient.model';
 })
 export class ShoppingListService {
   ingredientChanged = new EventEmitter<Ingredient[]>();
-
+  startedEditing = new EventEmitter<number>();
   ingredients: Ingredient[] = [
     new Ingredient('Test Ingredient 1', 22),
     new Ingredient('Test Ingredient 2', 11),
@@ -23,6 +23,20 @@ export class ShoppingListService {
 
   addIngredients(ings: Ingredient[]) {
     this.ingredients.push(...ings);
+    this.ingredientChanged.emit(this.ingredients.slice());
+  }
+
+  getIngredient(index: number) {
+    return this.ingredients[index];
+  }
+
+  updateIngredient(index: number, newIng: Ingredient) {
+    this.ingredients[index] = newIng;
+    this.ingredientChanged.emit(this.ingredients.slice());
+  }
+
+  deleteIngredient(index: number) {
+    this.ingredients.splice(index, 1);
     this.ingredientChanged.emit(this.ingredients.slice());
   }
 }
